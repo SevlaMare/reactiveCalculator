@@ -9,7 +9,7 @@ const Button = props => {
       { buttonName }
     </button>
   );
-}
+};
 
 Button.propTypes = {
   buttonName: PropTypes.string,

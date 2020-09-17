@@ -6,10 +6,12 @@ const Display = props => {
 
   return (
     <p>
-      Hi from display {result}
+      Hi from display
+      {' '}
+      {result}
     </p>
   );
-}
+};
 
 Display.propTypes = {
   result: PropTypes.string,
