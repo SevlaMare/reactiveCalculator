@@ -6,7 +6,7 @@ const Button = props => {
 
   return (
     <button type="button" className="btn">
-      A button { buttonName }
+      { buttonName }
     </button>
   );
 }
