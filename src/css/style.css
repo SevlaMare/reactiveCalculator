@@ -32,7 +32,6 @@ body {
   border: solid 1px #999;
 }
 
-
 .rowPanel:nth-of-type(n) {
   background: orange;
 }
