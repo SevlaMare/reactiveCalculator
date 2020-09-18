@@ -1,16 +1,28 @@
 import React from 'react';
 import Button from './Button';
 
-const buttons = [
-  'AC', '+/-', '%', '÷',
-  '7', '8', '9', 'X',
-  '4', '5', '6', '-',
-  '1', '2', '3', '+',
-  '0', '.', '=',
-];
-
 const ButtonPanel = () => (
-  buttons.map(element => <Button key={element.id} buttonName={element.toString()} />)
+  <div className="flex btnPanel">
+    <div className="rowPanel">
+      {['AC', '+/-', '%', '÷'].map(element => <Button key={element.id} buttonName={element.toString()} />)}
+    </div>
+
+    <div className="rowPanel">
+      {['7', '8', '9', 'X'].map(element => <Button key={element.id} buttonName={element.toString()} />)}
+    </div>
+
+    <div className="rowPanel">
+      {['4', '5', '6', '-'].map(element => <Button key={element.id} buttonName={element.toString()} />)}
+    </div>
+
+    <div className="rowPanel">
+      {['1', '2', '3', '+'].map(element => <Button key={element.id} buttonName={element.toString()} />)}
+    </div>
+
+    <div className="rowPanel">
+      {['0', '.', '='].map(element => <Button key={element.id} buttonName={element.toString()} />)}
+    </div>
+  </div>
 );
 
 export default ButtonPanel;
