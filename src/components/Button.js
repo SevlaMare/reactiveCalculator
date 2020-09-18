@@ -9,7 +9,7 @@ const Button = props => {
       type="button"
       style={{
         backgroundColor: color,
-        width: (wide ? '50%' : '25%'),
+        width: (wide ? '50%' : false),
       }}
     >
       { buttonName }
