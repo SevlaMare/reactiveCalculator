@@ -11,10 +11,15 @@ class App extends React.Component {
     this.state = { total: null, next: null, operation: null };
   }
 
+  handleClick(buttonName) {
+    const { total, next, operation } = this.state;
+    this.setState(Calculate({ total, next, operation }, buttonName));
+  }
+
   render() {
     return (
       <div id="calc" className="flex flex-col align-center">
-        <Display />
+        <Display result={this.state.total || this.state.next || '0'} />
         <ButtonPanel />
       </div>
     );
