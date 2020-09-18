@@ -4,15 +4,13 @@ import ButtonPanel from './ButtonPanel';
 
 function App() {
   return (
-    <>
-      <h1>Hi from app</h1>
-
+    <div>
       <Display />
 
       <div className="btnPanel">
         <ButtonPanel />
       </div>
-    </>
+    </div>
   );
 }
 
