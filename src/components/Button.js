@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const Button = props => {
   const { buttonName, wide, color } = props;
   const handleClick = () => {
-    console.log('wtf')
-    props.clickHandler(props.name);
+    // console.log('Button run ok', buttonName)
+    clickHandler(buttonName);
   }
 
   return (

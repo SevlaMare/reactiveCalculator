@@ -10,7 +10,8 @@ class App extends Component {
   }
 
   handleClick() {
-    this.setState(Calculate(this.state, buttonName));
+    // this.setState(Calculate(this.state, buttonName));
+    console.log("App run ok")
   }
 
   render() {

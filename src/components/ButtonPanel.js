@@ -2,7 +2,10 @@ import React from 'react';
 import Button from './Button';
 
 const ButtonPanel = () => {
-  const handleClick = (buttonName) => props.clickHandler(buttonName);
+  const handleClick = (buttonName) => {
+    clickHandler(buttonName);
+    console.log("ButtonPanel run ok")
+  }
 
   return (
     <div className="flex flex-col btnPanel">
