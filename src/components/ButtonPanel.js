@@ -1,16 +1,42 @@
 import React from 'react';
 import Button from './Button';
 
-const buttons = [
-  'AC', '+/-', '%', '÷',
-  '7', '8', '9', 'X',
-  '4', '5', '6', '-',
-  '1', '2', '3', '+',
-  '0', '.', '=',
-];
-
 const ButtonPanel = () => (
-  buttons.map(element => <Button key={element.id} buttonName={element.toString()} />)
+  <div className="flex flex-col btnPanel">
+    <div className="rowPanel">
+      <Button color="#d3d3d3" buttonName="AC" />
+      <Button color="#d3d3d3" buttonName="+/-" />
+      <Button color="#d3d3d3" buttonName="%" />
+      <Button buttonName="÷" />
+    </div>
+
+    <div className="rowPanel">
+      <Button color="#d3d3d3" buttonName="7" />
+      <Button color="#d3d3d3" buttonName="8" />
+      <Button color="#d3d3d3" buttonName="9" />
+      <Button buttonName="X" />
+    </div>
+
+    <div className="rowPanel">
+      <Button color="#d3d3d3" buttonName="4" />
+      <Button color="#d3d3d3" buttonName="5" />
+      <Button color="#d3d3d3" buttonName="6" />
+      <Button buttonName="-" />
+    </div>
+
+    <div className="rowPanel">
+      <Button color="#d3d3d3" buttonName="1" />
+      <Button color="#d3d3d3" buttonName="2" />
+      <Button color="#d3d3d3" buttonName="3" />
+      <Button buttonName="+" />
+    </div>
+
+    <div className="rowPanel">
+      <Button color="#d3d3d3" wide="true" buttonName="0" />
+      <Button color="#d3d3d3" buttonName="." />
+      <Button buttonName="=" />
+    </div>
+  </div>
 );
 
 export default ButtonPanel;
