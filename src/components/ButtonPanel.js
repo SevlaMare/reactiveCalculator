@@ -3,7 +3,8 @@ import Button from './Button';
 
 const ButtonPanel = () => {
   const handleClick = (buttonName) => {
-    console.log("ButtonPanel run ok");
+    console.log("ButtonPanel run");
+    // props.<nome atributo> que e uma fx do modulo acima (app):
     return props.clickHandler(buttonName);
   }
 
@@ -11,36 +12,36 @@ const ButtonPanel = () => {
     <div className="flex flex-col btnPanel">
       <div className="rowPanel">
         <Button color="#d3d3d3" buttonName="AC" clickHandler={ handleClick } />
-        <Button color="#d3d3d3" buttonName="+/-" />
-        <Button color="#d3d3d3" buttonName="%" />
-        <Button buttonName="÷" />
+        <Button color="#d3d3d3" buttonName="+/-" clickHandler={ handleClick } />
+        <Button color="#d3d3d3" buttonName="%" clickHandler={ handleClick } />
+        <Button buttonName="÷" clickHandler={ handleClick } />
       </div>
 
       <div className="rowPanel">
-        <Button color="#d3d3d3" buttonName="7" />
-        <Button color="#d3d3d3" buttonName="8" />
-        <Button color="#d3d3d3" buttonName="9" />
-        <Button buttonName="X" />
+        <Button color="#d3d3d3" buttonName="7" clickHandler={ handleClick } />
+        <Button color="#d3d3d3" buttonName="8" clickHandler={ handleClick } />
+        <Button color="#d3d3d3" buttonName="9" clickHandler={ handleClick } />
+        <Button buttonName="X" clickHandler={ handleClick } />
       </div>
 
       <div className="rowPanel">
-        <Button color="#d3d3d3" buttonName="4" />
-        <Button color="#d3d3d3" buttonName="5" />
-        <Button color="#d3d3d3" buttonName="6" />
-        <Button buttonName="-" />
+        <Button color="#d3d3d3" buttonName="4" clickHandler={ handleClick } />
+        <Button color="#d3d3d3" buttonName="5" clickHandler={ handleClick } />
+        <Button color="#d3d3d3" buttonName="6" clickHandler={ handleClick } />
+        <Button buttonName="-" clickHandler={ handleClick } />
       </div>
 
       <div className="rowPanel">
-        <Button color="#d3d3d3" buttonName="1" />
-        <Button color="#d3d3d3" buttonName="2" />
-        <Button color="#d3d3d3" buttonName="3" />
-        <Button buttonName="+" />
+        <Button color="#d3d3d3" buttonName="1" clickHandler={ handleClick } />
+        <Button color="#d3d3d3" buttonName="2" clickHandler={ handleClick } />
+        <Button color="#d3d3d3" buttonName="3" clickHandler={ handleClick } />
+        <Button buttonName="+" clickHandler={ handleClick } />
       </div>
 
       <div className="rowPanel">
-        <Button color="#d3d3d3" wide="true" buttonName="0" />
-        <Button color="#d3d3d3" buttonName="." />
-        <Button buttonName="=" />
+        <Button color="#d3d3d3" wide="true" buttonName="0" clickHandler={ handleClick } />
+        <Button color="#d3d3d3" buttonName="." clickHandler={ handleClick } />
+        <Button buttonName="=" clickHandler={ handleClick } />
       </div>
     </div>
   );

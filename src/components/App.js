@@ -11,13 +11,14 @@ class App extends Component {
 
   handleClick() {
     // this.setState(Calculate(this.state, buttonName));
-    console.log("App run ok")
+    console.log("App run")
   }
 
   render() {
     return (
       <div id="calc" className="flex flex-col align-center">
         <Display result={this.state.total || this.state.next || '0'} />
+        {/* this pq e um metodo */}
         <ButtonPanel clickHandler={ this.handleClick }/>
       </div>
     );
