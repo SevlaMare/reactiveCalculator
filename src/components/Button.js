@@ -5,10 +5,13 @@ const Button = props => {
   const { buttonName, wide, color } = props;
 
   return (
-    <button type="button" style={{
-      backgroundColor: color,
-      width: (wide ? '50%' : '25%')
-    }}>
+    <button
+      type="button"
+      style={{
+        backgroundColor: color,
+        width: (wide ? '50%' : '25%'),
+      }}
+    >
       { buttonName }
     </button>
   );
