@@ -23,7 +23,7 @@ body {
 
 .btnPanel {
   width: 700px;
-  background: lightgray;
+  background: #d3d3d3;
 }
 
 .rowPanel { height: 100px; }
@@ -35,6 +35,3 @@ body {
   border: solid 1px #999;
 }
 
-.rowPanel:nth-of-type(n) {
-  background: orange;
-}
