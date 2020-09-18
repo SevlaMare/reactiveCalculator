@@ -6,6 +6,9 @@ body {
 .flex { display: flex; }
 .flex-col { flex-direction: column; }
 .justify-end { justify-content: flex-end; }
+.align-center { align-items: center; }
+
+#calc { margin-top: 100px; }
 
 .display {
   height: 100px;
