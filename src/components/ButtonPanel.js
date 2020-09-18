@@ -3,8 +3,8 @@ import Button from './Button';
 
 const ButtonPanel = () => {
   const handleClick = (buttonName) => {
-    clickHandler(buttonName);
-    console.log("ButtonPanel run ok")
+    console.log("ButtonPanel run ok");
+    return props.clickHandler(buttonName);
   }
 
   return (

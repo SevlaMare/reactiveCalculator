@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 const Button = props => {
   const { buttonName, wide, color } = props;
   const handleClick = () => {
-    // console.log('Button run ok', buttonName)
-    clickHandler(buttonName);
+    console.log('Button run ok', buttonName)
+    // clickHandler comes from buttonPanel, accessed using props
+    return props.clickHandler(buttonName);
   }
 
   return (
