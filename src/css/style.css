@@ -3,7 +3,36 @@ body {
   padding: 0;
 }
 
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.justify-end { justify-content: flex-end; }
+
+.display {
+  height: 100px;
+  width: 700px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+  background: gray;
+}
+
 .btnPanel {
-  display: grid;
-  grid-template: repeat(5, 50px) / repeat(4, 50px);
+  width: 700px;
+  background: lightgray;
+}
+
+.rowPanel { height: 100px; }
+
+.rowPanel > button {
+  width: 25%;
+  height: 100%;
+  font-size: 1.2rem;
+  border: solid 1px #999;
+}
+
+
+.rowPanel:nth-of-type(n) {
+  background: orange;
 }

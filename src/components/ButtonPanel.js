@@ -2,9 +2,10 @@ import React from 'react';
 import Button from './Button';
 
 const ButtonPanel = () => (
-  <div className="flex btnPanel">
+  <div className="flex flex-col btnPanel">
     <div className="rowPanel">
-      {['AC', '+/-', '%', '÷'].map(element => <Button key={element.id} buttonName={element.toString()} />)}
+      {['AC', '+/-', '%', '÷'].map(element =>
+        <Button key={element.id} buttonName={element.toString()} />)}
     </div>
 
     <div className="rowPanel">

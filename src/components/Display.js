@@ -5,11 +5,9 @@ const Display = props => {
   const { result } = props;
 
   return (
-    <p>
-      Hi from display
-      {' '}
-      {result}
-    </p>
+    <div className="flex justify-end display">
+      <p>{result}</p>
+    </div>
   );
 };
 
