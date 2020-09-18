@@ -8,7 +8,10 @@ const Operate = (numberOne, numberTwo, operation) => {
   if (operation === '-') x1.minus(x2);
   if (operation === 'X') x1.multiply(x2);
   if (operation === '/') x1.div(x2);
-  if (operation === '%') x1.div(x2)/100;
+  if (operation === '%') { return x1.div(x2) / 100; }
+  if (operation === '+/-') x1.multiply(-1);
+
+  return 'Null';
 };
 
 export default Operate;
