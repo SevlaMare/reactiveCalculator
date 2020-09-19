@@ -16,7 +16,7 @@ const Operate = (numberOne, numberTwo, operation) => {
   if (operation === '%') result = x1.div(x2) / 100;
   if (operation === '+/-') result = x1.times(-1);
 
-  return result.toString();
+  return Number(result);
 };
 
 export default Operate;
