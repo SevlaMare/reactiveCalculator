@@ -9,7 +9,8 @@ const Operate = (numberOne, numberTwo, operation) => {
   if (operation === '-') result = x1.minus(x2);
   if (operation === 'X') result = x1.times(x2);
 
-  if (x2 == 0) { return result = "Can't divide by zero"; }
+  /* eslint eqeqeq: [1, "smart"] */
+  if (x2 == 0) { return "Can't divide by zero"; }
   if (operation === '÷') result = x1.div(x2);
 
   if (operation === '%') result = x1.div(x2) / 100;
