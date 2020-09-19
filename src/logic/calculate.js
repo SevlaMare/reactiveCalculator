@@ -1,7 +1,9 @@
 import Operate from './operate';
 
-const Calculate = ({ total, next, operation }, buttonName) => {
-  const data = { total, next, operation };
+const Calculate = (data, buttonName) => {
+  const { total, next, operation } = data;
+
+  if (buttonName == '0 ')
 
   if (buttonName === 'AC') {
     data.total = 0;
