@@ -1,5 +1,4 @@
 import Calculate from './calculate';
-// yarn test src/logic/calculate
 
 describe('Calculate, basic operations', () => {
   it('sum', () => {

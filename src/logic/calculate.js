@@ -26,7 +26,6 @@ const Calculate = ({ total, next, operation }, buttonName) => {
     }
   }
 
-  // TODO: dot 2nd time
   if (buttonName === '.') {
     if (next) return { total, next: `${next}.`, operation: false };
     return { total, next: '0.', operation: false };
