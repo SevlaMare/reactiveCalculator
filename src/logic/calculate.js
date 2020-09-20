@@ -8,6 +8,12 @@ const Calculate = ({ total, next, operation }, buttonName) => {
     else { next = Operate(next, 1, '+/-') }
   }
 
+  if (buttonName === '=') {
+    if (operation && total && next) return {
+      total : Operate(total, next, operation), next : '', operation : ''
+    }
+  }
+
   return { total, next, operation }
 };
 

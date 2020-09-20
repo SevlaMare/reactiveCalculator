@@ -20,11 +20,11 @@ describe('Calculate', () => {
     ).toEqual({ total: 7, next: -3, operation: 0 });
   });
 
-  // it('sum', () => {
-  //   expect(
-  //     Calculate({ total: 1, next: 3, operation: '+' }, '+'),
-  //   ).toEqual({ total: 4, next: '', operation: '' });
-  // });
+  it('equal =', () => {
+    expect(
+      Calculate({ total: 3, next: 2, operation: '+' }, '='),
+    ).toEqual({ total: 5, next: '', operation: '' });
+  });
 
   // equal
 
