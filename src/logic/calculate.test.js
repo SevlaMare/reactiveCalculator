@@ -1,15 +1,26 @@
 import Calculate from './calculate';
+// yarn test src/logic/calculate
 
 describe('Calculate', () => {
-  it('operate', () => {
+  it('all clean', () => {
     expect(
       Calculate({ total: 1, next: 3, operation: 'AC' }, 'AC'),
-    ).toEqual({ next: 0, operation: false, total: 0 });
+    ).toEqual({ total: 0, next: 0, operation: false });
   });
 
-  it('operate', () => {
+  it('sum', () => {
     expect(
       Calculate({ total: 1, next: 3, operation: '+' }, '+'),
-    ).toEqual({ next: 0, operation: false, total: 4 });
+    ).toEqual({ total: 4, next: 0, operation: false });
   });
+
+  // it('update from number pad', () => {
+  //   expect(
+  //     Calculate({ total: 1, next: 3, operation: 9 }, '+'),
+  //   ).toEqual({ total: 1, next: 9, operation: '+' });
+  // });
+
+  // equal
+
+  // dot
 });

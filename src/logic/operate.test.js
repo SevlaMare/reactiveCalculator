@@ -36,4 +36,8 @@ describe('Operate', () => {
   it('Unrecognized parameter', () => {
     expect(Operate(1, 2, '?')).toBe(0);
   });
+
+  // it('sum using scy notation', () => {
+  //   expect(Operate(1.23e+2, 1.23e+2, '+')).toBe(2.46e+4);
+  // });
 });
