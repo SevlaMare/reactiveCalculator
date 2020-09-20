@@ -14,6 +14,14 @@ const Calculate = ({ total, next, operation }, buttonName) => {
     }
   }
 
+  if (['+', '-', 'X', '÷'].includes(buttonName)) {
+    if (operation && total && next) {
+      operation = false;
+      total = Operate(total, next, buttonName);
+      next = 0;
+    }
+  }
+
   return { total, next, operation }
 };
 

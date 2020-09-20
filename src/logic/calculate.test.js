@@ -1,6 +1,39 @@
 import Calculate from './calculate';
 // yarn test src/logic/calculate
 
+describe('Calculate, basic operations', () => {
+  it('sum', () => {
+    expect(
+      Calculate({ total: 3, next: 2, operation: '+' }, '+'),
+    ).toEqual({ total: 5, next: 0, operation: false });
+  });
+
+  it('sub', () => {
+    expect(
+      Calculate({ total: 3, next: 2, operation: '-'}, '-'),
+    ).toEqual({ total: 1, next: 0, operation: false });
+  });
+
+  it('multiply', () => {
+    expect(
+      Calculate({ total: 3, next: 2, operation: 'X'}, 'X'),
+    ).toEqual({ total: 6, next: 0, operation: false });
+  });
+
+  it('division', () => {
+    expect(
+      Calculate({ total: 15, next: 5, operation: '÷'}, '÷'),
+    ).toEqual({ total: 3, next: 0, operation: false });
+  });
+
+  it('division by zero, should not alter data', () => {
+    expect(
+      Calculate({ total: 15, next: 0, operation: '÷'}, '÷'),
+    ).toEqual({ total: 15, next: 0, operation: '÷' });
+  });
+});
+
+
 describe('Calculate', () => {
   it('all clean', () => {
     expect(
@@ -25,8 +58,4 @@ describe('Calculate', () => {
       Calculate({ total: 3, next: 2, operation: '+' }, '='),
     ).toEqual({ total: 5, next: '', operation: '' });
   });
-
-  // equal
-
-  // dot
 });
