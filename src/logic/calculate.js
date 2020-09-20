@@ -2,10 +2,28 @@ import Operate from './operate';
 /* eslint-disable no-param-reassign */
 
 const Calculate = ({ total, next, operation }, buttonName) => {
-  if (buttonName === 'AC') return { total: 0, next: '', operation: '' };
+  if (['+', '-', 'X', '÷'].includes(buttonName)) {
+    if (operation && total && next) {
+      operation = false;
+      total = Operate(total, next, buttonName);
+      next = 0;
+    }
+  }
+
+  if (buttonName === '%') {
+    if (!next) { 
+      total = Operate(total, 1, buttonName);
+      operation = false;
+    } else {
+      next = Operate(next, 1, buttonName);
+      operation = false;
+    }
+  }
 
   if (buttonName === '+/-') {
-    if (next === '') { total = Operate(total, 1, '+/-'); } else { next = Operate(next, 1, '+/-'); }
+    if (next === '') { total = Operate(total, 1, '+/-'); } else {
+      next = Operate(next, 1, '+/-');
+    }
   }
 
   // TODO: dot 2nd time
@@ -22,13 +40,7 @@ const Calculate = ({ total, next, operation }, buttonName) => {
     }
   }
 
-  if (['+', '-', 'X', '÷'].includes(buttonName)) {
-    if (operation && total && next) {
-      operation = false;
-      total = Operate(total, next, buttonName);
-      next = 0;
-    }
-  }
+  if (buttonName === 'AC') return { total: 0, next: '', operation: '' };
 
   return { total, next, operation };
 };

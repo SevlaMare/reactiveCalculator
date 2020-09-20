@@ -31,6 +31,12 @@ describe('Calculate, basic operations', () => {
       Calculate({ total: 15, next: 0, operation: '÷' }, '÷'),
     ).toEqual({ total: 15, next: 0, operation: '÷' });
   });
+
+  it('percentage', () => {
+    expect(
+      Calculate({ total: 45, next: 5, operation: '%' }, '%'),
+    ).toEqual({ total: 45, next: 0.05, operation: false });
+  });
 });
 
 describe('Calculate', () => {
