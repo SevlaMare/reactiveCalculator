@@ -1,16 +1,24 @@
 import Operate from './operate';
+/* eslint-disable no-param-reassign */
 
 const Calculate = ({ total, next, operation }, buttonName) => {
   if (buttonName === 'AC') return { total: 0, next: '', operation: '' };
 
   if (buttonName === '+/-') {
-    if (next === "") { total = Operate(total, 1, '+/-') }
-    else { next = Operate(next, 1, '+/-') }
+    if (next === '') { total = Operate(total, 1, '+/-'); } else { next = Operate(next, 1, '+/-'); }
+  }
+
+  // TODO: dot 2nd time
+  if (buttonName === '.') {
+    if (next) return { total, next: `${next}.`, operation: false };
+    return { total, next: '0.', operation: false };
   }
 
   if (buttonName === '=') {
-    if (operation && total && next) return {
-      total : Operate(total, next, operation), next : '', operation : ''
+    if (operation && total && next) {
+      return {
+        total: Operate(total, next, operation), next: '', operation: '',
+      };
     }
   }
 
@@ -22,7 +30,7 @@ const Calculate = ({ total, next, operation }, buttonName) => {
     }
   }
 
-  return { total, next, operation }
+  return { total, next, operation };
 };
 
 export default Calculate;
