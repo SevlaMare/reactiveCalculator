@@ -5,19 +5,25 @@ describe('Calculate', () => {
   it('all clean', () => {
     expect(
       Calculate({ total: 1, next: 3, operation: 'AC' }, 'AC'),
-    ).toEqual({ total: 0, next: 0, operation: false });
+    ).toEqual({ total: 0, next: '', operation: '' });
   });
 
-  it('sum', () => {
+  it('invert direction for total', () => {
     expect(
-      Calculate({ total: 1, next: 3, operation: '+' }, '+'),
-    ).toEqual({ total: 4, next: 0, operation: false });
+      Calculate({ total: 1, next: "", operation: 0 }, '+/-'),
+    ).toEqual({ total: -1, next: "", operation: 0 });
   });
 
-  // it('update from number pad', () => {
+  it('invert direction for next', () => {
+    expect(
+      Calculate({ total: 7, next: 3, operation: 0 }, '+/-'),
+    ).toEqual({ total: 7, next: -3, operation: 0 });
+  });
+
+  // it('sum', () => {
   //   expect(
-  //     Calculate({ total: 1, next: 3, operation: 9 }, '+'),
-  //   ).toEqual({ total: 1, next: 9, operation: '+' });
+  //     Calculate({ total: 1, next: 3, operation: '+' }, '+'),
+  //   ).toEqual({ total: 4, next: '', operation: '' });
   // });
 
   // equal
