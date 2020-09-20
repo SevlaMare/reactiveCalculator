@@ -39,6 +39,11 @@ const Calculate = ({ total, next, operation }, buttonName) => {
     }
   }
 
+  if (String(buttonName).match(/[0-9]/)) {
+    if (!operation && total) total = 0;
+    if (!next) { next = buttonName; } else { next += buttonName; }
+  }
+
   if (buttonName === 'AC') return { total: 0, next: '', operation: '' };
 
   return { total, next, operation };

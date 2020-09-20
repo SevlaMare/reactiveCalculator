@@ -38,7 +38,7 @@ describe('Calculate, basic operations', () => {
   });
 });
 
-describe('Calculate', () => {
+describe('Calculate, special keys', () => {
   it('all clean', () => {
     expect(
       Calculate({ total: 1, next: 3, operation: 'AC' }, 'AC'),
@@ -73,5 +73,13 @@ describe('Calculate', () => {
     expect(
       Calculate({ total: 3, next: 5, operation: '.' }, '.'),
     ).toEqual({ total: 3, next: '5.', operation: false });
+  });
+});
+
+describe('Calculate, number pad', () => {
+  it('number', () => {
+    expect(
+      Calculate({ total: 0, next: 0, operation: false }, 5),
+    ).toEqual({ total: 0, next: 5, operation: false });
   });
 });
