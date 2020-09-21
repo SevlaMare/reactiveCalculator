@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = props => {
+  // same as initialize
   const { buttonName, wide, color } = props;
-  const handleClick = buttonName => {
-    props.clickHandler(buttonName);
-    console.log('BUTTON OK');
-  };
+
+  // waht is props
+  const handleClick = buttonName => props.clickHandler(buttonName);
 
   return (
     <button
@@ -15,7 +15,7 @@ const Button = props => {
         backgroundColor: color,
         width: (wide ? '50%' : false),
       }}
-      onClick={ () => handleClick(props.name) }
+      onClick={ () => handleClick(props.buttonName) }
     >
       { buttonName }
     </button>
