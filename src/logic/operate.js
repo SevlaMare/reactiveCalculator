@@ -1,8 +1,8 @@
 import Big from 'big.js';
 
 const Operate = (numberOne, numberTwo, operation) => {
-  const x1 = Big(numberOne);
-  const x2 = Big(numberTwo);
+  if(numberOne) { const x1 = Big(numberOne); }
+  if(numberTwo) { const x2 = Big(numberTwo); }
   let result = '';
 
   if (operation === '+') result = x1.plus(x2);
