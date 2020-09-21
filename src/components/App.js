@@ -7,19 +7,19 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { total: null, next: null, operation: null };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    // this.setState(Calculate(this.state, buttonName));
-    console.log("App run")
-  }
+  handleClick() { console.log('App run'); }
+  // this.setState(Calculate(this.state, buttonName));
 
   render() {
     return (
       <div id="calc" className="flex flex-col align-center">
+        <button onClick={this.handleClick}>TEST</button>
+
         <Display result={this.state.total || this.state.next || '0'} />
-        {/* this pq e um metodo */}
-        <ButtonPanel clickHandler={ this.handleClick }/>
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
