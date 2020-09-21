@@ -11,8 +11,9 @@ const Display = props => {
   );
 };
 
+// can accept string/number/bool wherever
 Display.propTypes = {
-  result: PropTypes.string,
+  // result: PropTypes.string,
 };
 
 Display.defaultProps = {

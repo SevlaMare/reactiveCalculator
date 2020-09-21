@@ -10,16 +10,24 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() { console.log('App run'); }
-  // this.setState(Calculate(this.state, buttonName));
+  handleClick(buttonName) {
+    // let result = Calculate(this.state, buttonName);
+    // this.setState({ ...result });
+
+    this.setState(Calculate(this.state, buttonName));
+
+    // this.setState({total: 321})
+
+    console.log(this.state);
+  }
 
   render() {
     return (
       <div id="calc" className="flex flex-col align-center">
-        <button onClick={this.handleClick}>TEST</button>
+        <button onClick={ this.handleClick }>TEST</button>
 
-        <Display result={this.state.total || this.state.next || '0'} />
-        <ButtonPanel clickHandler={this.handleClick} />
+        <Display result={ this.state.next || this.state.total || '0' } />
+        <ButtonPanel clickHandler={ this.handleClick } />
       </div>
     );
   }
