@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = props => {
-  // same as initialize
   const { buttonName, wide, color } = props;
-
-  // waht is props
   const handleClick = buttonName => props.clickHandler(buttonName);
 
   return (
@@ -24,8 +21,9 @@ const Button = props => {
 
 Button.propTypes = {
   buttonName: PropTypes.string,
-  // wide: PropTypes.bool,
+  wide: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   color: PropTypes.string,
+  clickHandler: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
