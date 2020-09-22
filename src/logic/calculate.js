@@ -12,7 +12,7 @@ const Calculate = ({ total, next, operation }, buttonName) => {
     if (!next.includes('.')) next += '.';
   }
 
-  if (['+', '-', 'X', '÷'].includes(buttonName)) {
+  if ('+-X÷'.includes(buttonName)) {
     total = total === "Can't divide by zero" ? '0' : total;
     if (operation && total && next) {
       total = Operate(total, next, operation);
