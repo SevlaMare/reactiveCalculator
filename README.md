@@ -3,7 +3,9 @@
 
 ![screenshot](doc/screenshot.png)
 
-<br>This project was made to learn how to work with React.<br>
+<br>This project was made to learn how to work with React,
+create components (Functional and class), manage state, use props, do prop-drilling,
+use event handlers and do runtime type check with PropTypes.<br>
 
 ## Content
 
@@ -20,11 +22,12 @@
 
 ## Live Demo
 You can access a online version at:<br>
-https://react-test-312.herokuapp.com/
+https://reactive-calculator.herokuapp.com/
 
 ## Requirements
 - [x] Setup workflow
-- [x] Deploy on Heroku
+- [x] Implement a calculator using React
+- [x] Deploy on Heroku (Without create-react-app)
 
 ## Requisites
 * [A modern web browser](https://www.google.com/chrome/)
@@ -73,11 +76,6 @@ yarn go
 #### Go to a web browser (Like Google Chrome) and visit:
 ```js
 localhost:7000
-```
-
-#### Run the tests
-```js
-yarn test
 ```
 
 ### Contributing
