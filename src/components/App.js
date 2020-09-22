@@ -16,9 +16,11 @@ class App extends Component {
   }
 
   render() {
+    const { next, total } = this.state;
+
     return (
       <div id="calc" className="flex flex-col align-center">
-        <Display result={this.state.next || this.state.total || '0'} />
+        <Display result={next || total || '0'} />
         <ButtonPanel clickHandler={this.handleClickAPP} />
       </div>
     );
