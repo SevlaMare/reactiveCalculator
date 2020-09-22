@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const Button = props => {
   const { buttonName, wide, color } = props;
+  const handleClick = buttonName => props.clickHandler(buttonName);
 
   return (
     <button
@@ -11,6 +12,7 @@ const Button = props => {
         backgroundColor: color,
         width: (wide ? '50%' : false),
       }}
+      onClick={() => handleClick(props.buttonName)}
     >
       { buttonName }
     </button>
@@ -19,8 +21,9 @@ const Button = props => {
 
 Button.propTypes = {
   buttonName: PropTypes.string,
-  wide: PropTypes.bool,
+  wide: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   color: PropTypes.string,
+  clickHandler: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
