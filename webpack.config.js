@@ -10,7 +10,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: "/dist/", // new
+    publicPath: '/dist/',
   },
 
   module: {
@@ -18,9 +18,9 @@ module.exports = {
       // babel
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader",
-        options: { presets: ["@babel/env"] }
+        // exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        options: { presets: ['@babel/env'] },
       },
 
       // HTML LOADER + plug
