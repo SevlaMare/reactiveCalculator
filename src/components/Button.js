@@ -15,7 +15,7 @@ const Button = props => {
         backgroundColor: color,
         width: (wide ? '50%' : false),
       }}
-      onClick={ () => handleClick(props.buttonName) }
+      onClick={() => handleClick(props.buttonName)}
     >
       { buttonName }
     </button>

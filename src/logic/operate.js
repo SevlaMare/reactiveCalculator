@@ -1,9 +1,5 @@
 import Big from 'big.js';
 
-// TODO: fix work around on x2 === 0
-// TODO: return to result x return inplace
-// TODO: result o string?
-
 const Operate = (numberOne, numberTwo, operation) => {
   let x1; let x2; let result;
 
@@ -16,14 +12,10 @@ const Operate = (numberOne, numberTwo, operation) => {
 
   if (operation === '÷') {
     if (x2.toString() === '0') result = "Can't divide by zero";
-    result = x1.div(x2);
+    else result = x1.div(x2);
   }
 
-  if (operation === '%') {
-    if (x2.toString() === '0') result = "Can't divide by zero";
-    result = x1.div(x2) / 100;
-  }
-
+  if (operation === '%') result = x1.div(100);
   if (operation === '+/-') result = x1.times(-1);
 
   return result.toString();

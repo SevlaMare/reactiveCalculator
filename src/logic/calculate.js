@@ -2,49 +2,48 @@ import Operate from './operate';
 /* eslint-disable no-param-reassign */
 
 const Calculate = ({ total, next, operation }, buttonName) => {
-  if (['+', '-', 'X', '÷'].includes(buttonName)) {
-    if (operation && total && next) {
-      operation = false;
-      total = Operate(total, next, buttonName);
-      next = 0;
-    }
-  }
-
-  if (buttonName === '%') {
-    if (!next) {
-      total = Operate(total, 1, buttonName);
-      operation = false;
-    } else {
-      next = Operate(next, 1, buttonName);
-      operation = false;
-    }
-  }
-
-  if (buttonName === '+/-') {
-    if (next === '') { total = Operate(total, 1, '+/-'); } else {
-      next = Operate(next, 1, '+/-');
-    }
+  if (String(buttonName).match(/[0-9]/)) {
+    if (!operation && total) total = '';
+    if (!next) { next = buttonName; } else { next += buttonName; }
   }
 
   if (buttonName === '.') {
-    if (next) return { total, next: `${next}.`, operation: false };
-    return { total, next: '0.', operation: false };
+    if (!next) { if (!total.includes('.')) total += '.'; }
+    if (!next.includes('.')) next += '.';
+  }
+
+  if (['+', '-', 'X', '÷'].includes(buttonName)) {
+    total = total === "Can't divide by zero" ? '0' : total;
+    if (operation && total && next) {
+      total = Operate(total, next, operation);
+      next = '';
+      operation = buttonName;
+    } else {
+      if (!total) total = next;
+      operation = buttonName;
+      next = '';
+    }
   }
 
   if (buttonName === '=') {
     if (operation && total && next) {
-      return {
-        total: Operate(total, next, operation), next: '', operation: '',
-      };
+      return { total: Operate(total, next, operation), next: '', operation: '' };
     }
   }
 
-  if (String(buttonName).match(/[0-9]/)) {
-    if (!operation && total) total = 0;
-    if (!next) { next = buttonName; } else { next += buttonName; }
+  if (buttonName === '+/-') {
+    if (next === '') { total = Operate(total, null, '+/-'); } else {
+      next = Operate(next, null, '+/-');
+    }
   }
 
-  if (buttonName === 'AC') return { total: 0, next: '', operation: '' };
+  if (buttonName === '%') {
+    if (!next) { total = Operate(total, null, buttonName); } else {
+      next = Operate(next, null, buttonName);
+    }
+  }
+
+  if (buttonName === 'AC') return { total: '', next: '', operation: '' };
 
   return { total, next, operation };
 };
